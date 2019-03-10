@@ -1,0 +1,185 @@
+page-room-chat{
+  ion-navbar .toolbar-background{
+    background-color: rgba(251, 238, 49, 0.882);
+  }
+  .toolbar-title {
+    overflow: visible;
+    position: relative;
+    .subtitle {
+      position: absolute;
+      top: 8px;
+      font-size: 66%;
+    }
+  }
+ion-content{
+  // background-color: #3c5061 !important;
+  // height: 100%;
+  //   width: 100%;
+    // background-image: url("../assets/imgs/carinhas.png");
+    background: linear-gradient(
+      180deg,
+     /* rgb(127, 128, 125),
+      rgba(124, 124, 120, 0.68) 12.52%,*/
+      rgba(114, 114, 111, 0.466) 89.52%
+    ),
+    (url("../assets/imgs/carinhas-cinza.png"));
+    background-position: relative;
+    background-repeat: repeat;
+    background-size: 100%;
+}
+.innerMessage {
+  display: inline-block;
+  padding: 5px 10px;
+  background:  #4b678fe0;
+  margin: 5px;
+  color: #000000f2;
+  border-radius: 3px;
+}
+.innerMessage.messageRight {
+  background:  #162b48e0;
+}
+.username {
+  font-weight: bold;
+  font-size: 80%;
+}
+.message {
+  font-size: 120%;
+}
+.elem button {
+    background-color: #fcee2f;
+    border-radius: 20px;
+    width: 35px;
+    height: 35px;
+    margin-top: 15px;
+}
+.elem {
+  position: relative;
+  min-width: 50px;
+}
+div#footer div.elem:first-child {
+    flex-grow: 1;
+}
+div#footer {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+ion-textarea{
+  padding-left: 15px;
+  font-size: 125%;
+  max-height: 40px;
+}
+ion-textarea ,textarea{
+  height: 40px;
+}
+ion-toolbar {
+  margin: 0;
+  padding: 0!important;
+}
+.message:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.messageLeft {
+  float: left;
+  max-width: 70%;
+}
+.messageRight {
+  float: right;
+ max-width: 70%;
+}
+  .text-input {
+    background-color: transparent;
+  }
+
+  #footer {
+    min-height: 60px;
+    border-radius: 20px;
+    background-color: transparent;
+  }
+
+  // .bar-buttons {
+  //   // margin-top: 20px;
+  // }
+
+  .innerMessage.messageRight {
+   background-color: rgba(252, 238, 47, 0.882);
+    color: #040404d6;
+    border: 1px solid rgba(252, 238, 47, 0.882);
+    border-radius: 20px;
+    padding: 8px 20px;
+    overflow: hidden;
+  }
+
+  .innerMessage.messageLeft {
+    background-color: #f6f7f8;
+    // color: #000000f2;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 8px 20px;
+
+    /* position:  relative; */
+  }
+
+  ion-footer ion-toolbar {
+    border-color: transparent;
+    border: none;
+  }
+
+  .footer .toolbar-background {
+    border-color: transparent;
+    border: none;
+  }
+
+  .text-input {
+    border: 1px solid #0000002e;
+    border-radius: 50px;
+    padding: 7px 16px;
+    background-color: white;
+  }
+
+  ion-footer:before {
+    background-image: none !important;
+  }
+
+  .messageLeft:after {
+    /* content necessário para a criação de um elemento vazio */
+    content: "";
+    width: 0;
+    height: 0;
+    /* position: absolute para manipularmos a posição da seta */
+    position: absolute;
+    /* Right com valor negativo para ele ficar para fora do balão de dialogo */
+    left: 0;
+    /* E aqui o truque com as bordas */
+    /* 50px é a metade da altura do elemento, assim temos uma seta da mesma altura que nosso elemento */
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+
+    border-left: 30px solid #f6f7f8;
+    border-radius: 50%;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    margin-top: -32px;
+    margin-left: 12px;
+  }
+
+  .messageRight:after {
+
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 0;
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    border-left: 30px solid #f4e633;
+    border-radius: 50%;
+    margin-top: -32px;
+    margin-right: 12px;
+  }
+
+
+}

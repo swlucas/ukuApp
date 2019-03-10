@@ -1,0 +1,105 @@
+<!-- <ion-header>
+
+  <ion-navbar>
+
+    <ion-title>{{anonymousName}}</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="leavingRoom()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+      <button ion-button (click)="leavingRoom(true)">
+        <ion-icon name="ios-shuffle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="message-wrap">
+    <div *ngFor="let message of messages" class="message">
+      <div class="sender" *ngIf="message.from !== anonymousId">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-10>
+              <p>{{message.text}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="me" *ngIf="message.from === anonymousId">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-10>
+              <p>{{message.text}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar>
+    <ion-textarea (keyup.enter)="sendMessage()" (keyDown)="typing($event)" [(ngModel)]="message" placeholder="Digite sua mensagem "></ion-textarea>
+    <ion-buttons end>
+      <button (click)="sendMessage()" ion-button icon-only>
+        <ion-icon name="send" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer> -->
+
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="alertToLeave()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{anonymousName}}
+      <p class="subtitle">{{status}}</p>
+    </ion-title>
+    <!-- <span>{{status}}</span> -->
+    <ion-buttons right>
+      <button ion-button icon-only (click)="leavingRoom(true)">
+        <ion-icon name="ios-shuffle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <div id="chatMessages">
+    <div *ngFor="let message of messages" [class]="message.specialMessage ? 'message special' : 'message'">
+      <div [class]="message.from == anonymousId ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
+        <!-- <div class="username">{{ message.username }}</div> -->
+        <div class="messageContent">{{ message.text }}</div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar transparent>
+    <div id="footer">
+      <div class="elem">
+        <ion-textarea #inputRef type="text" placeholder="Digite aqui..." (keyup.enter)="sendMessage()" (keyup)="typing($event)"
+          [(ngModel)]="message">
+          <div>{{viewTyping}}</div>
+        </ion-textarea>
+
+      </div>
+      <div class="elem">
+        <ion-buttons>
+          <button ion-button round icon-only [disabled]="!message" (mousedown)="$event.preventDefault()" (click)="sendMessage()">
+            <ion-icon name="ios-send" color="dark"></ion-icon>
+          </button>
+        </ion-buttons>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,7 @@
+<ion-content padding>
+  <img alt="Imagem da logo" src="../assets/imgs/logo-chat.png">
+  <ion-label class="lbl-cidade">Seu nick: </ion-label>
+  <ion-label class="lbl-cidade">{{city}}</ion-label>
+  <!-- <ion-input type="text" [(ngModel)]="userName" placeholder="ex: João"></ion-input> -->
+  <button class="btn-chat" clear ion-button round large (click)="rotary()" [disabled]="userName === ''">Entrar</button>
+</ion-content>
